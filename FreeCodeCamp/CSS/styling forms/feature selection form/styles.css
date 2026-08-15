@@ -1,0 +1,49 @@
+body{
+    background-color:darkkhaki
+}
+h1 {
+  text-align: center;
+}
+
+label {
+  display: block;
+  cursor: pointer;
+  margin: 8px auto;
+}
+.feature-card {
+  max-width: 250px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  margin: auto;
+  text-align: left;
+  display: block;
+  background-color: whitesmoke;
+  margin-bottom: 20px;
+}
+
+input[type="checkbox"]{
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #fef442;
+    border-radius: 4px;
+    display: grid;
+    place-content: center;
+}
+
+input[type="checkbox"]::after{
+    content: "✓";
+    color: white;
+    font-size: 16px;
+    transform: scale(0);
+}
+
+input[type="checkbox"]:checked{
+    background-color: #ffca42;
+    border-color: #e1ff00;
+}
+
+input[type="checkbox"]:checked::after{
+    transform: scale(1);
+}
