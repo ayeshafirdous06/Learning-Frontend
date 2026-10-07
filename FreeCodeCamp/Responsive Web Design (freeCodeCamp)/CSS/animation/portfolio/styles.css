@@ -1,0 +1,219 @@
+:root{
+    --cream: #fff7e2;
+   --sage: #a5c675;
+    --green: #52705A;
+    --forest: #294936;
+    --dark: #13281F;
+    --warm: #c0b4728b;
+    --rose:rgba(241, 139, 192, 0.894);
+    --navy: rgb(17, 48, 83);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+body{
+    display: grid;
+    grid-template-areas:"header header header"     
+                        ". main ."
+                        "footer footer footer";
+    grid-template-columns: 1fr 10fr 1fr;
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            #C9D8C5 0%,
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 25%,
+            #b5d3e4 0%,
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 20% 90%,
+            #F4E6A8 0%,
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 90%,
+            #E8C9D5 0%,
+            transparent 25%
+        ),
+        #FFFDF5;
+
+    background-attachment: fixed;
+}
+header{
+    grid-area: header;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    width: 100%;
+    height: 100px;
+    gap: 30px;
+    background-color: var(--dark);
+    z-index: 10;
+}
+nav{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+    margin-left: auto;
+}
+nav a{
+    text-decoration: none;
+    color: var(--cream);
+    font-size: 1.8rem;
+    font-weight: normal;
+    font-style: italic;
+    font-family: "Fondamento";
+    padding: 6px;
+    transition: 0.3s;
+}
+nav a:hover {
+    color: var(--dark);
+    background-color: var(--rose);
+    box-shadow: 2px 2px 3px var(--warm);
+    transform: scale(1.2);
+    border-radius: 40px;
+    border: 1px solid var(--forest);
+}
+.welcome-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background: radial-gradient(
+    ellipse at top left,
+    var(--sage) 0%,
+    var(--cream) 25%,
+    var(--sage) 50%,
+    var(--cream) 75%,
+    var(--sage) 100%
+);
+}
+.welcome-section:hover{
+    transform: scale(1.02);
+    transition: 0.3s ease,box-shadow 0.3s ease;
+    box-shadow: 0px 0px 10px 2px var(--rose) ;
+}
+.welcome-section h1{
+    font-size: 5rem;
+    font-family: "Fondamento";
+    font-weight: bold;
+    color: var(--navy);
+}
+.welcome-section p{
+    font-size: 2rem;
+    font-family: "Paytone One";
+    color: var(--navy);
+}
+.project-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 10%;
+    padding: 40px;
+    background-color: var(--sage);
+}
+.project-section:hover{
+    transform: scale(1.02);
+    transition: 0.3s ease,box-shadow 0.3s ease;
+    box-shadow: 0px 0px 10px 2px var(--rose) ;
+}
+.project-section img{
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 5px solid var(--rose);
+}
+.project-section img:hover{
+    transform: scale(1.05);
+    transition: 0.3s ease,box-shadow 0.3s ease;
+    box-shadow: 2px 2px 12px var(--cream);
+}
+.project-section h2{
+    grid-area: 1 / 1 / 2 / -1;
+    text-align: center;
+    font-size: 3.6rem;
+    font-family: "Fondamento";
+    font-weight: bold;
+    color: rgb(53, 53, 98);
+    text-shadow: 2px 3px 3px var(--cream);
+}
+.project-section a{
+    text-decoration: none;
+    color: var(--navy);
+}
+.project-section p{
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: "Paytone One";
+    text-align: center;
+    margin-top: 10px;
+}
+.links-section{
+    display:grid;
+    grid-template-areas:". heading ."
+                         "link link link"; 
+}
+.links-section h2{
+    grid-area: heading;
+    text-align: center;
+    font-family: "Fondamento";
+    font-weight: bold;
+    color: var(--navy);
+    font-size: 3.6rem;
+}
+.links{
+    grid-area: link;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+}
+.links i{
+    gap: 20px;
+    font-size: 3.6rem;
+    color: var(--dark);
+}
+footer {
+    grid-area: footer;
+    background-color: var(--dark);
+    color: var(--cream);
+    height: 100px;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 1200px) {
+    .project-section {
+        grid-template-columns: 1fr 1fr;
+    }
+    #navbar {
+        width: 50%;
+    }
+}
+
+@media (max-width: 800px) {
+    .project-section {
+        grid-template-columns: 1fr;
+    }
+
+    #navbar {
+        width: 80%;
+    }
+}
